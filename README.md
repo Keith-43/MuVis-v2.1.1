@@ -3,22 +3,26 @@
 </p>
 New in MuVis v2.1.1:  
 
-- v2.1.1 fixes a bug causing slow frame rate for SpectrumBars.  
-
+- v2.1.1 fixes a small bug causing a slow frame rate for SpectrumBars.  
+</p>
 New in MuVis v2.1:  
 
 - 29 visualizations (each with 2 options) consolidated into 24 visualizations (each with 4 options).  
 - Swipe left/right to change displayed visualizations.  Swipe up/down to changes each's option.  
 - Triple tap to show/hide toolbars (on iOS).  Triple tap to enable BlackHole playback (on macOS).    
 
-</p>
-This app runs on macOS, iOS, and iPadOS devices. The latest release can be downloaded from the Apple App Store [(here)](https://apps.apple.com/us/app/muvis-music-visualizer/id1582324352).  And the source code can be downloaded [(here)](https://github.com/Keith-43) .  MuVis uses the BASS audio library from [(here)](https://www.un4seen.com) .  
+</p>  
+
+This app runs on macOS, iOS, and iPadOS devices. The latest release can be downloaded from the Apple App Store [(here)](https://apps.apple.com/us/app/muvis-music-visualizer/id1582324352).  And the source code can be downloaded [(here)](https://github.com/Keith-43) .
+MuVis uses the BASS audio library from [(here)](https://www.un4seen.com) .  
 
 </p>
 Real-time music visualization is an exciting endeavor - providing the user with dynamic visual and aural stimulation and edification. I am hoping that others will benefit from my research - and perhaps build upon what I have started. I will strive to continuously improve this app as time allows.
 
 </p>
-When the MuVis app first opens, the on-screen display should look somewhat like:
+When the MuVis app first opens, the on-screen display should look somewhat like:  
+
+</p>  
 
 ![OpeningScreen](MuVis/Documentation/Doc_Images/UserGuideA.png)  
 
