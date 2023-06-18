@@ -2,11 +2,11 @@
 ### <p style="text-align: center;">“See what notes they're playing."  
 </p>
 New in MuVis v2.1:  
-	- 29 visualizations (each with 2 options) consolidated into 24 visualizations (each with 4 options).  
-	- Swipe left/right to change displayed visualizations.  Swipe up/down to changes each's option.  
-	- Triple tap to show/hide toolbars (on iOS).  Triple tap to enable BlackHole playback (on macOS).  
-  - v2.1.1 fixes a bug causing slow frame rate for SpectrumBars.  
-
+- 29 visualizations (each with 2 options) consolidated into 24 visualizations (each with 4 options).  
+- Swipe left/right to change displayed visualizations.  Swipe up/down to changes each's option.  
+- Triple tap to show/hide toolbars (on iOS).  Triple tap to enable BlackHole playback (on macOS).  
+- v2.1.1 fixes a bug causing slow frame rate for SpectrumBars.  
+</p>
 This app runs on macOS, iOS, and iPadOS devices. The latest release can be downloaded from the Apple App Store [(here)](https://apps.apple.com/us/app/muvis-music-visualizer/id1582324352).  And the source code can be downloaded [(here)](https://github.com/Keith-43) .
 MuVis uses the BASS audio library from [(here)](https://www.un4seen.com) .  
 
