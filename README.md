@@ -1,18 +1,20 @@
-# MuVis-v2.1.1
-MuVis is a Swift Multiplatform (macOS &amp; iOS) app for real-time music visualization.
+# MuVis - an Audio Visualizer app for Music
+### <p style="text-align: center;">“See what notes they're playing."  
+</p>
+New in MuVis v2.1:  
+	- 29 visualizations (each with 2 options) consolidated into 24 visualizations (each with 4 options).  
+	- Swipe left/right to change displayed visualizations.  Swipe up/down to changes each's option.  
+	- Triple tap to show/hide toolbars (on iOS).  Triple tap to enable BlackHole playback (on macOS).  
+  - v2.1.1 fixes a bug causing slow frame rate for SpectrumBars.  
 
-“See what notes they're playing."
-
-New in MuVis v2.1: - 29 visualizations (each with 2 options) consolidated into 24 visualizations (each with 4 options). - Swipe left/right to change displayed visualizations. Swipe up/down to changes each's option. - Triple tap to show/hide toolbars (on iOS). Triple tap to enable BlackHole playback (on macOS). - Numerous small changes to improve code readability and performance.
-MuVis is an open-source multi-platform app (using SwiftUI, Swift, and Xcode) for music visualization. It renders informative (and musically useful) graphical displays in real time from music files being played - or from the device's microphone. Further details are provided in the project's User Guide and Visualizations Guide documents.
-
-This app runs on macOS, iOS, and iPadOS devices. The latest release can be downloaded from the Apple App Store (here). And the source code can be downloaded (here) . MuVis uses the BASS audio library from (here) .
+This app runs on macOS, iOS, and iPadOS devices. The latest release can be downloaded from the Apple App Store [(here)](https://apps.apple.com/us/app/muvis-music-visualizer/id1582324352).  And the source code can be downloaded [(here)](https://github.com/Keith-43) .
+MuVis uses the BASS audio library from [(here)](https://www.un4seen.com) .  
 
 Real-time music visualization is an exciting endeavor - providing the user with dynamic visual and aural stimulation and edification. I am hoping that others will benefit from my research - and perhaps build upon what I have started. I will strive to continuously improve this app as time allows.
 
 When the MuVis app first opens, the on-screen display should look somewhat like:
 
-OpeningScreen
+![OpeningScreen](MuVis/Documentation/Doc_Images/UserGuideA.png)  
 
 and the computer's speakers should be playing music from a pre-loaded royalty-free music file. (Currently, the song file is "The Elevator Bossa Nova" from Bensound.com.) The on-screen display shows a real-time dynamic visual representation of the audio that you are hearing.
 
