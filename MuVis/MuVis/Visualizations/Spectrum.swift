@@ -49,9 +49,14 @@ struct Spectrum: View {
     }
 }
 
+#Preview("Spectrum") {
+    Spectrum()
+        .enhancedPreview()
+}
 
+// MARK: - Spectrum_Live
 
-struct Spectrum_Live: View {
+fileprivate struct Spectrum_Live: View {
     @EnvironmentObject var manager: AudioManager  // Observe the instance of AudioManager passed from ContentView
     @EnvironmentObject var settings: Settings
     let spectralEnhancer = SpectralEnhancer()
@@ -138,9 +143,14 @@ struct Spectrum_Live: View {
     }  // end of var body: some View
 }  // end of Spectrum_Live struct
 
+#Preview("Spectrum_Live") {
+    Spectrum_Live()
+        .enhancedPreview()
+}
 
+// MARK: - DecibelSpectrum_Live
 
-struct DecibelSpectrum_Live: View {
+fileprivate struct DecibelSpectrum_Live: View {
     @EnvironmentObject var manager: AudioManager  // Observe the instance of AudioManager passed from ContentView
     let spectralEnhancer = SpectralEnhancer()
     let noteProc = NoteProcessing()
@@ -206,9 +216,14 @@ struct DecibelSpectrum_Live: View {
     }  // end of var body: some View
 }  // end of DecibelSpectrum_Live struct
 
+#Preview("DecibelSpectrum_Live") {
+    DecibelSpectrum_Live()
+        .enhancedPreview()
+}
 
+// MARK: - SpectrumPeaks
 
-struct SpectrumPeaks: View {
+fileprivate struct SpectrumPeaks: View {
     @EnvironmentObject var manager: AudioManager  // Observe the instance of AudioManager passed from ContentView
     @EnvironmentObject var settings: Settings
     @Environment(\.colorScheme) var colorScheme
@@ -238,29 +253,35 @@ struct SpectrumPeaks: View {
     }
 }  // end of SpectrumPeaks struct
 
+#Preview("SpectrumPeaks") {
+    SpectrumPeaks()
+        .enhancedPreview()
+}
 
+// MARK: - ampToDecibels
 
-// The ampToDecibels() func is used in the Spectrum and MusicSpectrum visualizations.
+// TODO: Move to a new file?
+/// The ampToDecibels method is used in the Spectrum and MusicSpectrum visualizations.
 public func ampToDecibels(inputArray: [Float]) -> ([Float]) {
-    var dB: Float = 0.0
-    let dBmin: Float =  1.0 + 0.0125 * 20.0 * log10(0.001)
-    var amplitude: Float = 0.0
-    var outputArray: [Float] = [Float] (repeating: 0.0, count: inputArray.count)
+    var dB: Float = 0
+    let dBmin: Float =  1 + 0.0125 * 20 * log10(0.001)
+    var amplitude: Float = 0
+    var outputArray: [Float] = [Float](repeating: 0, count: inputArray.count)
 
     // I must raise 10 to the power of -4 to get my lowest dB value (0.001) to 20*(-4) = 80 dB
     for bin in 0 ..< inputArray.count {
         amplitude = inputArray[bin]
         if(amplitude < 0.001) { amplitude = 0.001 }
         dB = 20.0 * log10(amplitude)    // As 0.001  < spectrum < 1 then  -80 < dB < 0
-        dB = 1.0 + 0.0125 * dB          // As 0.001  < spectrum < 1 then    0 < dB < 1
+        dB = 1 + 0.0125 * dB          // As 0.001  < spectrum < 1 then    0 < dB < 1
         dB = dB - dBmin
-        dB = min(max(0.0, dB), 1.0)
+        dB = min(max(0, dB), 1)
         outputArray[bin] = dB
     }
     return outputArray
 }
 
-
+// MARK: - GrayVertRects
 
 struct GrayVertRects: View {
     @Environment(\.colorScheme) var colorScheme
@@ -316,3 +337,8 @@ struct GrayVertRects: View {
         }
     }
 }  // end of struct GrayVertRects
+
+#Preview("GrayVertRects") {
+    GrayVertRects()
+        .enhancedPreview()
+}

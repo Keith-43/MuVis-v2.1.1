@@ -57,9 +57,14 @@ struct TriOctSpectrum: View {
     }
 }
 
+#Preview("TriOctSpectrum") {
+    TriOctSpectrum()
+        .enhancedPreview()
+}
 
+// MARK: - TriOctSpectrum_Live
 
-struct TriOctSpectrum_Live : View {
+fileprivate struct TriOctSpectrum_Live : View {
     @EnvironmentObject var manager: AudioManager  // We observe the instance of AudioManager passed from ContentView.
     @EnvironmentObject var settings: Settings
     @Environment(\.colorScheme) var colorScheme
@@ -136,9 +141,14 @@ struct TriOctSpectrum_Live : View {
     }  // end of var body: some View
 }  // end of TriOctSpectrum_Live struct
 
+#Preview("TriOctSpectrum_Live") {
+    TriOctSpectrum_Live()
+        .enhancedPreview()
+}
 
+// MARK: - Notes36
 
-struct Notes36 : View {
+fileprivate struct Notes36 : View {
     @EnvironmentObject var manager: AudioManager  // We observe the instance of AudioManager passed from ContentView.
     @Environment(\.colorScheme) var colorScheme
     
@@ -170,9 +180,14 @@ struct Notes36 : View {
     }
 }  // end of Notes36 struct
 
+#Preview("Notes36") {
+    Notes36()
+        .enhancedPreview()
+}
 
+// MARK: - Peaks36
 
-struct Peaks36: View {
+fileprivate struct Peaks36: View {
     @EnvironmentObject var manager: AudioManager  // Observe the instance of AudioManager passed from ContentView
     @Environment(\.colorScheme) var colorScheme
     var noteProc = NoteProcessing()
@@ -206,3 +221,7 @@ struct Peaks36: View {
     }
 }
 
+#Preview("Peaks36") {
+    Peaks36()
+        .enhancedPreview()
+}

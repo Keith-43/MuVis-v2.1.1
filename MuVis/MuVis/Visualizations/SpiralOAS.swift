@@ -74,8 +74,14 @@ struct SpiralOAS: View {
     }
 }
 
+#Preview("SpiralOAS") {
+    SpiralOAS()
+        .enhancedPreview()
+}
 
-struct SpiralOAS_LayoutBackground: View {
+// MARK: - SpiralOAS
+
+fileprivate struct SpiralOAS_LayoutBackground: View {
     @Environment(\.colorScheme) var colorScheme
     var body: some View {
         GeometryReader { geometry in
@@ -227,10 +233,15 @@ struct SpiralOAS_LayoutBackground: View {
         }  // end of GeometryReader
     }  // end of var body: some View
 }  // end of SpiralOAS_LayoutBackground struct
-    
-    
 
-struct SpiralOAS_Live: View {
+#Preview("SpiralOAS_LayoutBackground") {
+    SpiralOAS_LayoutBackground()
+        .enhancedPreview()
+}
+    
+// MARK: - SpiralOAS_Live
+
+fileprivate struct SpiralOAS_Live: View {
     @EnvironmentObject var manager: AudioManager  // Observe the instance of AudioManager passed from ContentView
     @EnvironmentObject var settings: Settings
     let noteProc = NoteProcessing()
@@ -324,3 +335,8 @@ struct SpiralOAS_Live: View {
         }  // end of GeometryReader
     }  // end of var body: some View
 }  // end of SpiralOAS_Live struct
+
+#Preview("SpiralOAS_Live") {
+    SpiralOAS_Live()
+        .enhancedPreview()
+}

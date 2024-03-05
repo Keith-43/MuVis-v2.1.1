@@ -54,8 +54,14 @@ struct EllipticalOAS: View {
     }
 }
 
+#Preview("EllipticalOAS") {
+    EllipticalOAS()
+        .enhancedPreview()
+}
 
-struct Ellipses: View {
+// MARK: - Ellipses
+
+fileprivate struct Ellipses: View {
     @Environment(\.colorScheme) var colorScheme
     var body: some View {
         GeometryReader { geometry in
@@ -72,15 +78,20 @@ struct Ellipses: View {
                         .foregroundColor(.black)
                         .frame(width: width * CGFloat(row+1) / CGFloat(octaveCount+1),
                                height: height * CGFloat(row+1) / CGFloat(octaveCount+1))
-                }  // end of ForEach(row)
-            }  // end of ZStack
-        }  // end of GeometryReader
-    }  // end of var body: some View
-}  // end of Ellipses struct
+                }
+            }
+        }
+    }
+}
 
+#Preview("Ellipses") {
+    Ellipses()
+        .enhancedPreview()
+}
 
+// MARK: - CenterEllipse
 
-struct CenterEllipse: View {
+fileprivate struct CenterEllipse: View {
     @Environment(\.colorScheme) var colorScheme
     var body: some View {
         GeometryReader { geometry in
@@ -92,13 +103,18 @@ struct CenterEllipse: View {
                 .foregroundColor( (colorScheme == .light) ? Color.white : Color(red: 60.0/255.0, green: 45.0/255.0, blue: 30.0/255.0) )
                 .frame(width: width / CGFloat(octaveCount+1), height: height / CGFloat(octaveCount+1))
                 .offset(x: width * 8.0/18.0, y: height * 8.0/18.0)
-        }  // end of GeometryReader
-    }  // end of var body: some View
-}  // end of CenterEllipse struct
+        }
+    }
+}
+
+#Preview("CenterEllipse") {
+    CenterEllipse()
+        .enhancedPreview()
+}
     
+// MARK: - GrayTriangles
 
-
-struct GrayTriangles: View {
+fileprivate struct GrayTriangles: View {
     @Environment(\.colorScheme) var colorScheme
 
     var body: some View {
@@ -166,13 +182,18 @@ struct GrayTriangles: View {
 
             }  // end of ForEach(note)
             
-        }  // end of GeometryReader
-    }  // end of var body: some View
-}  // end of GrayTriangles struct
+        }
+    }
+}
     
+#Preview("GrayTriangles") {
+    GrayTriangles()
+        .enhancedPreview()
+}
 
+// MARK: - EllipticalOAS_Live
 
-struct EllipticalOAS_Live: View {
+fileprivate struct EllipticalOAS_Live: View {
     @EnvironmentObject var manager: AudioManager  // Observe the instance of AudioManager passed from ContentView.
     @EnvironmentObject var settings: Settings
     let noteProc = NoteProcessing()
@@ -277,3 +298,7 @@ struct EllipticalOAS_Live: View {
     }  // end of var body: some View
 }  // end of EllipticalOAS_Live struct
 
+#Preview("EllipticalOAS_Live") {
+    EllipticalOAS_Live()
+        .enhancedPreview()
+}

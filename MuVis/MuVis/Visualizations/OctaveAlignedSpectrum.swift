@@ -50,9 +50,14 @@ struct OctaveAlignedSpectrum: View {
     }
 }
 
+#Preview("OctaveAlignedSpectrum") {
+    OctaveAlignedSpectrum()
+        .enhancedPreview()
+}
 
+// MARK: - OctaveAlignedSpectrum_Live
 
-struct OctaveAlignedSpectrum_Live: View {
+fileprivate struct OctaveAlignedSpectrum_Live: View {
     @EnvironmentObject var manager: AudioManager  // Observe the instance of AudioManager passed from ContentView.
     @EnvironmentObject var settings: Settings
     @Environment(\.colorScheme) var colorScheme
@@ -149,3 +154,8 @@ struct OctaveAlignedSpectrum_Live: View {
         }  // end of GeometryReader
     }  // end of var body: some View
 }  // end of OctaveAlignedSpectrum_Live struct
+
+#Preview("OctaveAlignedSpectrum_Live") {
+    OctaveAlignedSpectrum_Live()
+        .enhancedPreview()
+}

@@ -39,9 +39,14 @@ struct PianoKeyboard: View {
     }
 }
 
+#Preview("PianoKeyboard") {
+    PianoKeyboard()
+        .enhancedPreview()
+}
 
+// MARK: - PianoKeyboard_Live
 
-struct PianoKeyboard_Live: View {
+fileprivate struct PianoKeyboard_Live: View {
     @EnvironmentObject var manager: AudioManager  // Observe instance of AudioManager passed from ContentView
     @EnvironmentObject var settings: Settings
     @Environment(\.colorScheme) var colorScheme
@@ -142,9 +147,14 @@ struct PianoKeyboard_Live: View {
     }  // end of var body: some View
 }  // end of PianoKeyboard_Live struct
 
+#Preview("PianoKeyboard_Live") {
+    PianoKeyboard_Live()
+        .enhancedPreview()
+}
 
+// MARK: - Notes72
 
-struct Notes72 : View {
+fileprivate struct Notes72 : View {
     @EnvironmentObject var manager: AudioManager
     @Environment(\.colorScheme) var colorScheme
     
@@ -167,9 +177,14 @@ struct Notes72 : View {
     }
 }
 
+#Preview("Notes72") {
+    Notes72()
+        .enhancedPreview()
+}
 
+// MARK: - Peaks72
 
-struct Peaks72: View {
+fileprivate struct Peaks72: View {
     @EnvironmentObject var manager: AudioManager  // Observe the instance of AudioManager passed from ContentView
     @Environment(\.colorScheme) var colorScheme
     var noteProc = NoteProcessing()
@@ -192,4 +207,9 @@ struct Peaks72: View {
             }
         }
     }
+}
+
+#Preview("Peaks72") {
+    Peaks72()
+        .enhancedPreview()
 }
