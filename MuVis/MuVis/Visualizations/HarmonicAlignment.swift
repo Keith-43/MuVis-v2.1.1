@@ -71,8 +71,14 @@ struct HarmonicAlignment: View {
     }
 }  // end of the HarmonicAlignment struct
 
+#Preview("HarmonicAlignment") {
+    HarmonicAlignment()
+        .enhancedPreview()
+}
 
-struct HarmonicAlignment_Live: View {
+// MARK: - HarmonicAlignment_Live
+
+fileprivate struct HarmonicAlignment_Live: View {
     @EnvironmentObject var manager: AudioManager  // Observe the instance of AudioManager passed from ContentView
     @EnvironmentObject var settings: Settings
     
@@ -206,3 +212,8 @@ struct HarmonicAlignment_Live: View {
         }  // end of GeometryReader
     }  // end of var body: some View
 }  // end of HarmonicAlignment_Live struct
+
+#Preview("HarmonicAlignment_Live") {
+    HarmonicAlignment_Live()
+        .enhancedPreview()
+}

@@ -18,9 +18,11 @@ struct SpectrumBars: View {
     @EnvironmentObject var settings: Settings
     @Environment(\.colorScheme) var colorScheme
     
-    var linearGradient : LinearGradient = LinearGradient( gradient: Gradient(colors: [.red, .yellow, .green]),
-                                                          startPoint: .top,
-                                                          endPoint: .center)
+    var linearGradient = LinearGradient(
+        gradient: Gradient(colors: [.red, .yellow, .green]),
+        startPoint: .top, endPoint: .center
+    )
+    
     var paddingFraction: CGFloat = 0.2
     var includeCaps: Bool = true
 
@@ -55,9 +57,14 @@ struct SpectrumBars: View {
     }
 }  // end of SpectrumBars struct
 
+#Preview("SpectrumBars") {
+    SpectrumBars()
+        .enhancedPreview()
+}
 
+// MARK: - AmplitudeBar
 
-struct AmplitudeBar: View {
+fileprivate struct AmplitudeBar: View {
     @Environment(\.colorScheme) var colorScheme
     @EnvironmentObject var settings: Settings
     var amplitude: Float

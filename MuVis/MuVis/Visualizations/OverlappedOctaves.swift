@@ -41,7 +41,12 @@ struct OverlappedOctaves: View {
     }
 }
 
+#Preview("OverlappedOctaves") {
+    OverlappedOctaves()
+        .enhancedPreview()
+}
 
+// MARK: - OverlappedOctaves_Live
 
 struct OverlappedOctaves_Live: View {
     @EnvironmentObject var manager: AudioManager  // Observe the instance of AudioManager passed from ContentView
@@ -90,7 +95,7 @@ struct OverlappedOctaves_Live: View {
                     // Extend the polygon outline to the pane's lower left corner:
                     path.addLine( to: CGPoint( x: 0.0, y: height - octaveOffset ) )
 
-                    if(oct < 4) {       // Use the muSpectrum for the lower 4 octaves:
+                    if oct < 4 {       // Use the muSpectrum for the lower 4 octaves:
                         // Extend the polygon outline upward to the first sample point:
                         magY = gain * Double( muSpectrum[oct * pointsPerOctave] )
                         magY = min(max(0.0, magY), 1.0)
@@ -108,7 +113,7 @@ struct OverlappedOctaves_Live: View {
                             path.addLine(to: CGPoint(x: x, y: y))
                         }
 
-                    }else{              // Use the spectrum for the upper 4 octaves:
+                    } else {              // Use the spectrum for the upper 4 octaves:
                         // Extend the polygon outline upward to the first sample point:
                         magY = gain * Double( spectrum[ noteProc.octBottomBin[oct] ] )
                         magY = min(max(0.0, magY), 1.0)
@@ -149,3 +154,8 @@ struct OverlappedOctaves_Live: View {
         }  // end of GeometryReader
     }  // end of var body: some View
 }  // end of OverlappedOctaves_Live struct
+
+#Preview("OverlappedOctaves_Live") {
+    OverlappedOctaves_Live()
+        .enhancedPreview()
+}

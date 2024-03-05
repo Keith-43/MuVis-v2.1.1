@@ -34,8 +34,14 @@ struct Waterfall: View {
     }
 }
 
+#Preview("Waterfall") {
+    Waterfall()
+        .enhancedPreview()
+}
 
-struct Waterfall_Live: View {
+// MARK: - Waterfall_Live
+
+fileprivate struct Waterfall_Live: View {
     @EnvironmentObject var manager: AudioManager  // Observe instance of AudioManager passed from ContentView.
     @EnvironmentObject var settings: Settings
     
@@ -133,3 +139,8 @@ struct Waterfall_Live: View {
         }  // end of Canvas
     }  //end of var body: some View
 }  // end of Waterfall_Live struct
+
+#Preview("Waterfall_Live") {
+    Waterfall_Live()
+        .enhancedPreview()
+}
